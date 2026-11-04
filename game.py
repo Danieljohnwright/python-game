@@ -16,9 +16,20 @@ import random
 
 
 
-# loops and conditions 
-#data structures
+# method
 
+def generateRandomNumber():
+    random_number = random.randint(1,9)
+
+def verifyNumber(user_input,random_number):
+    if user_input_int == 0: 
+            print("Please add a number between 1 and 9")
+    else :
+            if user_input == random_number:
+                current_score = score_board.get(user)
+                score_board[user] = current_score + 1
+            else:
+                print("No match!")
 round = 1
 total_round = 5
 
@@ -30,20 +41,13 @@ users = {"user1", "user2", "user3"}
 score_board = {"user1":0, "user2":0, "user3":0}
 
 while(round <= total_round):
-    random_number = random.randint(1,9)
+    random_number = generateRandomNumber() 
     print("random number:", random_number)
     for user in users:
         user_input = input(f"{user} Guess a number: ")
         user_input_int = int(user_input)
+        verifyNumber(user_input_int,random_number)
         
-        if user_input_int == 0: 
-            print("Please add a number between 1 and 9")
-        else :
-            if user_input_int == random_number:
-                current_score = score_board.get(user)
-                score_board[user] = current_score + 1
-            else:
-                print("No match!")
     round = round + 1
 
 print("final scoreboard", score_board)
