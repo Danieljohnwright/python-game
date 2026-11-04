@@ -13,13 +13,16 @@ import random
 
 # print(id(user_input_int))
 # print(id(my_var))
-
-
-
 # method
 
 def generateRandomNumber():
-    random_number = random.randint(1,9)
+    random_number = 0
+    try:
+     random_number = random.randint(1,9)
+    except Exception as e: 
+        random_number = 7
+    finally:
+        return random_number
 
 def verifyNumber(user_input,random_number):
     if user_input_int == 0: 
